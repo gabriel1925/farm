@@ -1,0 +1,35 @@
+extends ./nav.pug
+block nav
+	//- h3.text-center.animated.fadeIn Remedios
+	table.table.animatedd.fadeIn.table-striped.table-bordered#table
+		caption Remedios
+		thead
+			tr
+				//- th #
+				th Codigo
+				th Descripcion
+				th qr
+				th Vencimiento
+				th Cantidad
+				th.text-center Opciones
+		tbody
+			each remedio in remedios
+				tr.maschico 
+					//- td=remedio.id
+					td=remedio.codigo
+					td=remedio.descripcion
+					td=remedio.qr
+					td=remedio.vencimiento
+					td=remedio.cantidad
+					td.text-center 
+						a(href="/editar/"+remedio.id).btn.btn-danger editar
+						|  - 
+						- var urles = "/borrar/"+remedio.id;
+						a(href=urles).btn.btn-danger eliminar
+		//- h1-btn.btn-success.btn.botonexcel Excel
+	link(rel='stylesheet', type='text/css', href='/datables/datatables.min.css')
+	script(type='text/javascript', charset='utf8', src='/datables/datatables.min.js')
+	script(type='text/javascript', charset='utf8', src='/js/tablas.js')
+	script.
+		salida(1);
+

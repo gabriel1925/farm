@@ -1,0 +1,43 @@
+.tabs-container {
+  position: relative;
+  width: 600px;
+  margin: 2em auto; }
+
+.tabs {
+  color: #141827;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .tabs__item {
+    border: 1px solid #141827;
+    border-bottom: none;
+    cursor: pointer;
+    line-height: 2.5;
+    padding: 0 1em;
+    margin-right: 1px;
+    background: #829DFF;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    top: 1px;
+    z-index: 0; }
+    .tabs__item.active {
+      background: #CFD9FF;
+      z-index: 20; }
+
+.panels {
+  color: #141827;
+  background: #CFD9FF;
+  border: 1px solid #141827;
+  padding: 1em;
+  position: relative;
+  z-index: 10; }
+  .panels__item {
+    position: absolute;
+    display: none; }
+    .panels__item.active {
+      position: relative;
+      display: block; }

@@ -1,0 +1,30 @@
+extends ./nav.pug
+block nav
+	table.table.animatedd.fadeIn.display.table-striped.table-bordered#tablavencido
+		//- caption Remedios
+		thead
+			tr
+				//- th #
+				th Codigo
+				th Descripcion
+				th Vencimiento
+				th Cantidad
+				th.text-center Opciones
+		tbody
+			each cosa in cosas
+				tr 
+					//- td=cosa.id
+					td=cosa.codigo
+					td=cosa.descripcion
+					td=cosa.vencimiento
+					td=cosa.cantidad
+					td.text-center 
+						a(href="/editar/"+cosa.id).btn.btn-danger editar
+						|  - 
+						- var urles = "/borrar/"+cosa.id;
+						a(href=urles).btn.btn-danger eliminar
+	.center.text-center
+				a(href="/fechavencimiento" class="btn btn-warning") Volver
+	link(rel='stylesheet', type='text/css', href='/datables/datatables.css')
+	script(type='text/javascript', charset='utf8', src='/datables/datatables.js')
+	script(type='text/javascript', charset='utf8', src='/js/tablas.js')

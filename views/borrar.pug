@@ -1,0 +1,25 @@
+extends ./nav.pug
+block nav
+	- var accion="/borrar/"+remedio.id+"?_method=delete";
+	.container
+		.alert.alert-warning.text-center
+			h1 Seguro que queres borrar esto
+			table.table
+				thead
+					tr
+						th #
+						th Codigo
+						th Descripcion
+						th Vencimiento
+						th Cantidad
+				tbody
+					tr
+						td=remedio.id
+						td=remedio.codigo
+						td=remedio.descripcion
+						td=remedio.vencimiento
+						td=remedio.cantidad
+			form(method="POST", action=accion class="from-horizontal block  center")
+				input(type="submit", value="SI", class="btn btn-danger") 
+				a(href="/stock" , class="btn btn-success", style="margin-left:10px;") NO
+				

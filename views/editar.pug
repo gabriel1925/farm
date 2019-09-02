@@ -1,0 +1,28 @@
+extends ./nav.pug
+block nav
+	- var accion="/editar/"+remedio.id+"?_method=put";
+	.container.animatedd.fadeIn
+		h1.text-center Editar el Producto
+		.row.mx-auto(style="width: 300px;")
+			form(method="POST", action=accion class="from-horizontal block  center")
+				.celda
+					label.col-md-6 Codigo
+					input(type="number",name="codigo",value=remedio.codigo , required, autofocus).col-md-6
+				.celda
+					label.col-md-6 Descripcion
+					input(type="text",name="descripcion", value=remedio.descripcion , required).col-md-6
+				.celda
+					label.col-md-6 QR
+					input(type="text",name="qr",value=remedio.qr , required).col-md-6
+				.celda
+					label.col-md-6 vencimiento
+					input(type="number",name="vencimiento",value=remedio.vencimiento , required).col-md-6
+				.celda
+					label.col-md-6 Cantidad
+					input(type="number",name="cantidad",value=remedio.cantidad , required).col-md-6
+				br
+				.row(style="width: 300px;margin-left:0;")
+					.col-md-6
+					input(type="submit",value="Guardar", class="btn btn-info btn-block col-md-6")
+	script.
+		salida(1);

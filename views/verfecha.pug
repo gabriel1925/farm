@@ -1,0 +1,19 @@
+extends ./nav.pug
+block nav
+	.container
+		.col-m4
+			br
+			br
+			br
+			br
+		.col-m4
+			form(method="POST", action="/fechavencimiento", class="block form-group text-center " )
+				label Coloque fecha de Vencimiento  
+				br
+				input(type="number",autofocus,required name="vencimiento",value="0420")
+				br
+				br
+				input(type="submit",value="Pedir", class="btn btn-info")
+		.col-m4
+	script.
+		salida(3);

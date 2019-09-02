@@ -1,0 +1,18 @@
+extends ./header.pug
+block encabezado
+	.row
+		.col-md-4
+		div(class="col-md-4 center-block no-float top-space text-left")
+			.inicio-secion
+				form(method="POST" action="/" class="form-signin")
+					.form-group.text-center
+						h1(class="h3 mb-3 font-weight-normal") Inicio de sesión
+						br
+						//- label Usuario
+						input(type="text" name="usuario" placeholder="Usuario" class="form-control" required autofocus)
+						br
+						//- label Contraseña
+						input(type="password" name="contraseña" placeholder="Contraseña" class="form-control" required)
+					.form-group.text-center
+						input(type="submit" value="Iniciar Sesión" class="btn btn-block btn-primary")
+		.col-md-4

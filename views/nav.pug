@@ -1,0 +1,24 @@
+extends ./header.pug
+block encabezado
+	header
+		nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+			a.navbar-brand(href='/',style="color:steelblue;") Farmacia Caps 149
+			button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+			#navbarCollapse.collapse.navbar-collapse
+				ul.navbar-nav.mr-auto#selectoractive
+					li.nav-item
+						a.nav-link(href='/')
+							| Salidas
+					li.nav-item
+						a.nav-link(href='/stock') Stock
+					li.nav-item
+						a.nav-link(href='/entradamed') Entrada de medicamentos
+					li.nav-item
+						a.nav-link(href='/fechavencimiento') Fecha de vencimiento
+					li.nav-item
+						a.nav-link(href='/mesames') Mes a mes
+				form.form-inline.mt-2.mt-md-0
+					a.btn.btn-outline-danger.my-2.my-sm-0(href='/cerrarsesion') Salir
+	main.padding-topb.container
+		block nav

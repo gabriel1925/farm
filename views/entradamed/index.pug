@@ -1,0 +1,26 @@
+extends ../nav.pug
+block nav
+	.container
+		.row.mx-auto.animatedd.fadeIn(style="width: 300px;")
+			form(method="POST", action="/agregar" class="from-horizontal block  center")
+				.celda
+					label.col-md-6 Codigo
+					input(type="number",name="codigo",required, autofocus).col-md-6
+				.celda
+					label.col-md-6 Descripcion
+					input(type="text",name="descripcion",required).col-md-6
+				.celda
+					label.col-md-6 QR
+					input(type="text",name="qr",required).col-md-6
+				.celda
+					label.col-md-6 vencimiento
+					input(type="number",name="vencimiento",required).col-md-6
+				.celda
+					label.col-md-6 Cantidad
+					input(type="number",name="cantidad",required).col-md-6
+				br
+				.row(style="width: 300px;margin-left:0;")
+						.col-md-6
+						input(type="submit",value="Guardar" class="btn btn-info btn-block col-md-6")
+	script.
+		salida(2);

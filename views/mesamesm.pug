@@ -1,0 +1,35 @@
+extends ./nav.pug
+block nav
+	link(href='/exptoxls/dist/css/tableexport.css' rel='stylesheet' type='text/css')
+	h3.text-center Lista de Fin de mes
+	table.table.animatedd.fadeIn.table-striped.table-bordered#table
+		caption 
+		thead
+			tr
+				//- th #
+				th.text-center Codigo
+				th.text-center Cantidad
+		tbody
+			-var n = 0;
+			while n<=tamaños
+				tr
+					td.text-center=remedios.codigos[n]
+					td.text-center=remedios.total[n]
+				-n++
+
+	script(src="/exptoxls/jquery-1.12.4.min.js")
+	script(src="/exptoxls/FileSaver.min.js")
+	script(src="/exptoxls/Blob.min.js")
+	script(src="/exptoxls/xls.core.min.js")
+	script(src="/exptoxls/dist/js/tableexport.js")
+	script(src="/exptoxls/dist/js/conf.js")
+	link(rel='stylesheet', type='text/css', href='/datables/datatables.min.css')
+	//- script(type='text/javascript', charset='utf8', src='/datables/datatables.min.js')
+	//- script(type='text/javascript', charset='utf8', src='/js/tablas.js')
+	script.
+		salida(4);
+
+	//- -console.log("tamaños")
+	//- -console.log(tamaños)
+	//- -console.log("remedios")
+	//- -console.log(remedios)

@@ -1,0 +1,58 @@
+$colorfont:#141827;
+$backcolor:#CFD9FF;
+
+$backcolorsinactivar:#829DFF;
+.tabs-container{
+	position: relative;
+	//border: 1px solid;
+	width: 600px;
+	margin: 2em auto;
+}
+.tabs{
+	color: $colorfont;
+	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	display: flex;
+	
+
+	&__item{
+		border: 1px solid $colorfont;
+		border-bottom: none;
+		cursor: pointer;
+		line-height: 2.5;
+		padding: 0 1em;
+		margin-right: 1px;
+		background: $backcolorsinactivar;
+		border-radius: 5px 5px 0 0;
+		position:relative;
+		top:1px;
+		z-index:0;
+
+
+		&.active{
+			background: $backcolor ;
+			z-index: 20;
+		}
+	}
+}
+.panels{
+	color: $colorfont;
+	background:$backcolor;
+	border: 1px solid $colorfont ;
+	padding: 1em;
+	position: relative;
+	z-index: 10;
+	&__item{
+		position: absolute;
+		display: none;
+
+
+		&.active{
+			position: relative;
+			display: block;
+		}
+	}
+
+}

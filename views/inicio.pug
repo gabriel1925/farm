@@ -1,0 +1,45 @@
+extends ./nav.pug
+block nav
+	link(rel="stylesheet", href="css/panels.css")
+	.container
+		.row.animated.fadeIn
+			.tabs-container
+				ul#tabs.tabs
+					li.tabs__item.active QR
+					li.tabs__item manitos
+				.panels
+					.panels__item.active
+						form.form-horizontal(method="POST", action="/salidaqr")
+							fieldset.text-center
+								// Form Name
+								legend QR
+								// Text input
+								.form-group.block 
+									.col-md-12
+										input#textinput.form-control.input-md(name='qr', type='text', placeholder='Escaneame escaneate', required, autofocus)
+									br
+									.col-md-12
+										input#textinput.form-control.input-md(name='cantidad', type='number', placeholder='cantidad', required )
+									br
+									.col-md-12
+										input(type="submit", value="Aceptar" class="btn btn-block btn-info")
+
+					.panels__item
+						form.form-horizontal(method="POST", action="/salidamano")
+							fieldset.text-center
+								// Form Name
+								legend A mano
+								// Text input
+								.form-group.block.center
+									.col-md-12
+										input#textinput.form-control.input-md(name='codigo', type='number', placeholder='codigo', required, autofocus)
+										input#textinput.form-control.input-md(name='vencimiento', type='strng', placeholder='vencimiento MMAA', required)
+									br
+									.col-md-12
+										input#textinput.form-control.input-md(name='cantidad', type='number', placeholder='cantidad', required )
+									br
+									.col-md-12
+										input(type="submit", value="Aceptar" class="btn btn-block btn-info")
+	script(src="/js/main.js")
+	script.
+		salida(0);
