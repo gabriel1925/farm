@@ -305,10 +305,6 @@ farm.get("/mesames",(sol,res)=>{
 			};
 			var tamañocod = stockfarm.codigos.length - 1;
 			var numerocod = tamañocod;
-			var tamcod=[];
-			for (var i = 0; i <= stockfarm.codigos.length-1; i++) {
-				tamcod.push(i);
-			}
 			//console.log(tamcod);
 			var obtamcod = {cosas:tamcod};
 		var stock = new stockfarmacia(stockfarm);
